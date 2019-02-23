@@ -14,10 +14,5 @@ end
 
 def find_the_cheese food
   cheese_types = ["cheddar", "gouda", "camembert"]
-  matches = food.select { |item| cheese_types.include? item }
-  if matches.empty?
-    return nil
-  else
-    return matches.first
-  end
+  food.find { |item| cheese_types.include? item }
 end
